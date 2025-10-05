@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Manas Gupta - Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Nova+Square&family=Press+Start+2P&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      background-color: #000;
+      color: white;
+      font-family: "Nova Square", system-ui;
+      line-height: 1.6;
+    }
+    /* NAVBAR */
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 60px;
+      background-color: rgb(0, 0, 0);
+      border-bottom: 2px solid rgb(60, 60, 60);
+      padding: 20px;
+      font-size: large;
+    }
+    nav a {
+      text-decoration: none;
+      color: white;
+      transition: color 0.3s ease, transform 0.3s ease;
+    }
+    nav a:hover {
+      color: rgb(83, 55, 240);
+      transform: scale(1.1);
+    }
+
+    /* HERO SECTION */
+    section.hero {
+      background-color: rgb(19, 19, 46);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      padding: 80px 20px;
+      gap: 60px;
+    }
+    section.hero img {
+      height: 300px;
+      width: 300px;
+      border-radius: 50%;
+      border: 3px solid rgb(83, 55, 240);
+      box-shadow: 0 0 20px rgba(83, 55, 240, 0.6);
+    }
+    .hero .text {
+      max-width: 500px;
+    }
+    .hero h1 span {
+      color: rgb(83, 55, 240);
+    }
+    .hero h2 span {
+      color: rgb(83, 55, 240);
+    }
+    .hero p {
+      color: rgb(180, 180, 180);
+      margin-top: 15px;
+    }
+    .button {
+      margin-top: 20px;
+    }
+    .button a {
+      display: inline-block;
+      color: rgb(83, 55, 240);
+      border: 2px solid rgb(83, 55, 240);
+      border-radius: 25px;
+      padding: 12px 25px;
+      margin-right: 15px;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+    .button a:hover {
+      background-color: rgb(83, 55, 240);
+      color: white;
+      transform: scale(1.05);
+    }
+
+    /* ABOUT SECTION */
+    .About {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 60px;
+      padding: 100px 20px;
+      background: linear-gradient(135deg, #0c2e4e, #1c4f6e);
+    }
+    .About img {
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      border: 4px solid #53a9f0;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+    }
+    .About .text {
+      max-width: 600px;
+      color: #eee;
+    }
+    .About h1 {
+      margin-bottom: 20px;
+      text-decoration: underline;
+      color: azure;
+    }
+
+    /* PROJECTS SECTION */
+    .Projects {
+      background: linear-gradient(135deg, #061a71, #030b3c);
+      padding: 100px 20px;
+      text-align: center;
+    }
+    .Projects h1 {
+      margin-bottom: 50px;
+      text-decoration: underline;
+    }
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      max-width: 1100px;
+      margin: auto;
+    }
+    .project-card {
+      background: #111;
+      border-radius: 15px;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .project-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+    .project-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .project-card h3 {
+      color: #35aced;
+      padding: 20px;
+    }
+
+    /* CONTACT SECTION */
+    .contact {
+      background: linear-gradient(135deg, #3e26c7, #000);
+      padding: 100px 20px;
+      text-align: center;
+    }
+    .contact h1 {
+      margin-bottom: 40px;
+      text-decoration: underline;
+    }
+    .contact form {
+      max-width: 600px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .contact input,
+    .contact textarea {
+      width: 100%;
+      padding: 15px;
+      border-radius: 10px;
+      border: none;
+      outline: none;
+      font-size: 1rem;
+      background: #222;
+      color: white;
+    }
+    .contact input:focus,
+    .contact textarea:focus {
+      box-shadow: 0 0 10px #fff;
+    }
+    .contact button {
+      padding: 15px;
+      background: #53a9f0;
+      border: none;
+      border-radius: 25px;
+      color: #fff;
+      font-size: 1.1rem;
+      transition: transform 0.3s ease, background 0.3s ease;
+      cursor: pointer;
+    }
+    .contact button:hover {
+      background: #35aced;
+      transform: scale(1.05);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      section.hero,
+      .About {flex-direction: column;
+        text-align: center;
+      }
+      .About img {
+        margin-bottom: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- NAVBAR -->
+  <header>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero" id="home">
+    <div class="text">
+      <h1><span>Manas Gupta</span></h1>
+      <h2>I'm a Student at <span>Scaler School of Technology</span></h2>
+      <p>
+        I enjoy collaborating on tech communities, mentoring peers, and constantly learning new technologies!
+        Other than this I also have interest in MUNing, Debating, Event management.
+      </p>
+      <div class="button">
+        <a href "https://www.instagram.com/manas.7007?igsh=MWZkMzliZGR6MXUxbg==" target="_blank">Instagram</a>
+        <a href="https://www.linkedin.com/in/manas-gupta-b3a768283?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">LinkedIn</a>
+        <a href="https://github.com/manas7007" target="_blank">Github</a>
+      </div>
+    </div>
+    <img src="mainimage.png" alt="profile photo" />
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <div class="About" id="about">
+    <img src="WhatsApp Image 2025-10-01 at 14.34.36_1b79dc1a.jpg" alt="Manas" />
+    <div class="text">
+      <h1>About Me!</h1>
+      <p> Heyy! My name is Manas Gupta. I am a freshmen at Scaler School of Technology and i am also pursuing BS in Computer Science from BITS Pilani.
+      </p>
+      <br />
+      <p>
+        I am also working on startup called Okapi. Other than that i am also running a profitable startup,Glinze.
+      </p>
+    </div>
+  </div>
+
+  <!-- PROJECTS SECTION -->
+  <div class="Projects" id="projects">
+    <h1>My Projects!</h1>
+    <div class="projects-grid">
+      <div class="project-card">
+        <img src="WhatsApp Image 2025-10-05 at 19.43.38_7d0f94dd.jpg" alt="Glinze" />
+        <h3>Glinze MUN</h3>
+      </div>
+      <div class="project-card">
+        <img src="another.png" alt="Okapi" />
+        <h3>Okapi</h3>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTACT SECTION -->
+  <div class="contact" id="contact">
+    <h1>Contact Me!</h1>
+    <form>
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+</body>
+</html>
